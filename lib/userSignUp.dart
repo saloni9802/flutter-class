@@ -121,14 +121,16 @@ class _LoginDemoState extends State<Signup> {
 
                     print(userName+"|"+email+"|"+phone+"|"+password);
                    //Server Connection
-                     http.Response response= await http.post(Uri.parse("http://192.168.95.212:3000/signup"),
-                      body: {
+                     http.Response response= await http.post(Uri.parse("http://localhost:3000/signup"),
+                       body: {
                         "name":userName,
                         "email":email,
                         "phone":phone,
                         "password":password
-                      }
+                      },
+
                       );
+                     print(response.body);
                     if(response.statusCode==200)
                       {
                         print(response.body);
